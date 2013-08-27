@@ -1,24 +1,21 @@
 /* Author: Matthew Wraith
- *
  * Compilation instructions: I've included a Makefile. Simply, make && ./main to
  * run this. If for some reason the Makefile does not work, this should:
  *
  * gcc -lGL -lGLU -lglut main.c blockI.c -o main
  *
  * Block I physics - This program makes an orange I bounce around using
- * Newtonian Physics. 
- *
- */
+ * Newtonian Physics. */
 
 #include "main.h"
 #include "blockI.h"
+#include "particle.h"
 
 int nFPS = 30;
-float fRotateAngle = 0.f;
 bool drawWireFrame = false;
 bool gravUp = false;
 
-/* The particle struct is described in blockI.h
+/* The particle struct is described in particle.h
  * This does all the physics. */
 particle blockI = { 
     1.0,         // Mass
@@ -46,7 +43,6 @@ void display(void) {
 
     translateToParticle(blockI);
     glScalef(HEIGHT,HEIGHT,0.0f);
-    //glRotatef(fRotateAngle, 0.0f, 0.0f, 1.0f); // If I want to rotate my I
 
     // If drawWireFrame, draw the wireframe, else draw the normal model.
     drawWireFrame ? drawBlockILines() : drawBlockI();
@@ -127,8 +123,6 @@ void mouse(int button, int state, int x, int y) {
 
 // The time keeping function
 void timer(int v) {
-    fRotateAngle += 1.f; // change rotation angles
-
     // trigger display function by sending redraw into message queue
     glutPostRedisplay();    
     glutTimerFunc(1000/nFPS,timer,v); // restart timer again

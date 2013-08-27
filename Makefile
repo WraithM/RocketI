@@ -3,7 +3,7 @@ LD = gcc
 CFLAGS = -g -Wall 
 LDFLAGS = -I/usr/include -L/usr/lib -lGL -lGLU -lglut #–lGLEW
 EXEC = main
-SRC = main.c blockI.c
+SRC = main.c blockI.c particle.c
 OBJ = $(SRC:.c=.o)
 RM = rm
 
