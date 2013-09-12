@@ -8,6 +8,7 @@ Compilation instructions
 I've included a Makefile. To compile, simply run make. To run, ./main
 
 If for some reason make does not work, this should:
+
 gcc -lGL -lGLU -lglut main.c blockI.c -o main
 
 Again, to run: ./main
@@ -22,14 +23,14 @@ sort of like a rocket.
 
 Keyboard commands
 -----------------
-ESC or Q:   Quit the program
-Space:      Give the particle a bounce upward
-W:          Turn the model into a wireframe, to show that I've used no
-            T-junctions  
-A:          Give the particle a bounce to the left
-S:          Give the particle a bounce to the right
-D:          Flip the direction of gravity (this also flips the direction that
-            Space gives you a boost in
+    ESC or Q:   Quit the program
+    Space:      Give the particle a bounce upward
+    W:          Turn the model into a wireframe, to show that I've used no
+                    T-junctions  
+    A:          Give the particle a bounce to the left
+    S:          Give the particle a bounce to the right
+    D:          Flip the direction of gravity (this also flips the direction that
+                    Space gives you a boost in
 
 Mouse commands
 --------------
